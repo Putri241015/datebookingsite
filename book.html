@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Book Your Date</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- EmailJS SDK -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function() {
+        window.onload = function () {
             emailjs.init("jf43Z0U8A5db8zTTo"); // Your actual Public Key
-        })();
+        };
     </script>
 </head>
 <body>
@@ -42,9 +44,10 @@
         <label for="time">Select Time:</label>
         <input type="time" id="time" name="time" required>
 
-        <input type="submit" value="Book Now">
+        <input type="submit" value="Book Now" style="background-color: #ff69b4; color: white;">
     </form>
 
+    <!-- JavaScript to send email -->
     <script>
         function sendEmail(event) {
             event.preventDefault();
@@ -71,6 +74,7 @@
 
 </body>
 </html>
+
 
 
 
