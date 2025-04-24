@@ -1,3 +1,4 @@
+/* Existing styles */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #fff0f5;
@@ -23,9 +24,14 @@ nav a {
 }
 
 h2 {
-    color: #d63384;
+    color: #fff;
+    background-color: #ff69b4;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
 }
 
+/* Form layout */
 form {
     display: flex;
     flex-direction: column;
@@ -43,9 +49,11 @@ input[type="submit"] {
     color: white;
     border: none;
     cursor: pointer;
+    font-weight: bold;
     transition: background 0.3s ease;
 }
 
 input[type="submit"]:hover {
     background-color: #e0529d;
 }
+

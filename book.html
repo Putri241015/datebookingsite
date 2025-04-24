@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Book Your Date</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("jf43Z0U8A5db8zTTo"); // Your actual Public Key
+        })();
+    </script>
 </head>
 <body>
 
@@ -17,10 +23,10 @@
     </nav>
 
     <!-- Booking Section -->
-    <h2>Book Your Date</h2>
+    <h2>💖 Book Your Special Date 💖</h2>
     <p>Select a date and time for your chosen activity:</p>
 
-    <form onsubmit="sendEmail(event)">
+    <form id="bookingForm" onsubmit="sendEmail(event)">
         <label for="activity">Choose Activity:</label>
         <select id="activity" name="activity">
             <option value="Dinner Date">Dinner Date</option>
@@ -39,7 +45,6 @@
         <input type="submit" value="Book Now">
     </form>
 
-    <!-- JavaScript to Handle Email -->
     <script>
         function sendEmail(event) {
             event.preventDefault();
@@ -48,19 +53,25 @@
             const date = document.getElementById("date").value;
             const time = document.getElementById("time").value;
 
-            const subject = encodeURIComponent("New Date Booking 💖");
-            const body = encodeURIComponent(
-                `Hey love! You’ve got a new date booked!\n\n` +
-                `💌 Activity: ${activity}\n📅 Date: ${date}\n⏰ Time: ${time}\n\n` +
-                `Can’t wait to enjoy it with you! 💕`
-            );
+            const templateParams = {
+                activity: activity,
+                date: date,
+                time: time
+            };
 
-            window.location.href = `mailto:mieyranizam2410@gmail.com?subject=${subject}&body=${body}`;
+            emailjs.send("service_1mizj95", "template_ln1z87i", templateParams)
+                .then(function(response) {
+                    alert("Your booking was sent successfully! 💌");
+                }, function(error) {
+                    alert("Oops! Something went wrong 😢");
+                    console.error("FAILED...", error);
+                });
         }
     </script>
 
 </body>
 </html>
+
 
 
 
