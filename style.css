@@ -44,6 +44,7 @@ input, select {
     border: 1px solid #ccc;
 }
 
+/* Button styles */
 input[type="submit"] {
     background-color: #ff69b4;
     color: white;
@@ -55,5 +56,55 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #e0529d;
+}
+
+/* Login styles */
+.login-container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 1em;
+    color: #ff69b4;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    margin-bottom: 10px;
+}
+
+.login-container input[type="text"]::placeholder,
+.login-container input[type="password"]::placeholder {
+    color: #aaa;
+}
+
+/* Additional Styles for the Login Form */
+.login-btn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e0529d;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    body {
+        padding: 1em;
+    }
+
+    nav, h2 {
+        font-size: 1.5em;
+    }
 }
 
